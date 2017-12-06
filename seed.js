@@ -27,43 +27,50 @@ const students = [
     firstName: 'Acid',
     lastName: 'Betty',
     email: 'AB@rupauldragrace.com',
-    gpa: 2.5
+    gpa: 2.5,
+    campusId: id()
   },
   {
     firstName: 'Kim',
     lastName: 'Chi',
     email: 'KC@rupauldragrace.com',
-    gpa: 3.8
+    gpa: 2.75,
+    campusId: id()
   },
   {
     firstName: 'Sasha',
     lastName: 'Velour',
     email: 'SV@rupauldragrace.com',
-    gpa: 3.2
+    gpa: 3.2,
+    campusId: id()
   },
   {
     firstName: 'Naomi',
     lastName: 'Smalls',
     email: 'NS@rupauldragrace.com',
-    gpa: 3.9
+    gpa: 3.9,
+    campusId: id()
   }
 ];
 
+Student.belongsTo(Campus);
+Campus.hasMany(Student);
+
 const seed = () =>
-  Promise.all(students.map(student =>
-    Student.create(student))
-  )
-  .then(() =>
   Promise.all(campuses.map(campus =>
     Campus.create(campus))
+  )
+  .then(() =>
+  Promise.all(students.map(student =>
+    Student.create(student))
   )
 );
 
 const main = () => {
   console.log('Syncing db...');
-  db.sync({ force: true })
+  db.sync({force: true})
     .then(() => {
-      console.log('Seeding databse...');
+      console.log('Seeding database...');
       return seed();
     })
     .catch(err => {
