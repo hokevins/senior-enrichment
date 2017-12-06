@@ -1,4 +1,4 @@
-'use strict'; 
+'use strict';
 
 const express = require('express');
 const path = require('path');
@@ -19,9 +19,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api', require('./api')); // include our routes!
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
-}); // Send index.html for any other requests
+// DONT' NEED ANYMORE, 404 ERROR HANDLER IN /API/INDEX.JS
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../public/index.html'));
+// }); // Send index.html for any other requests
 
 //error handling middleware
 app.use((err, req, res, next) => {

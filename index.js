@@ -1,6 +1,6 @@
-'use strict'
-const chalk = require('chalk')
-const pkg = require('./package.json')
+'use strict';
+const chalk = require('chalk');
+const pkg = require('./package.json');
 
 const nameError =
 `*******************************************************************
@@ -13,11 +13,11 @@ const nameError =
 isn't valid. If you don't change it, things won't work right.
 
 Please change it in ${__dirname}/package.json
-********************************************************************`
+********************************************************************`;
 
-const reasonableName = /^[\w\-]+$/
+const reasonableName = /^[\w\-]+$/;
 if (!reasonableName.test(pkg.name)) {
-  console.error(chalk.red(nameError))
+  console.error(chalk.red(nameError));
 }
 
-module.exports = pkg
+module.exports = pkg;
