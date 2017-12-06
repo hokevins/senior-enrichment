@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Button from './Button';
 /* The code below does NOT relate to your project.
    This code is just a nice BIG example of how you can make a component.
    Also it is HILARIOUS :D Have fun!
@@ -33,7 +33,7 @@ export default class WinterJokes extends Component {
     const {joke, answered} = this.state
     return (
       <div>
-        <div>TEST</div>
+        <Button />
         <h1 onClick={answered ? this.nextJoke : this.answer}>{joke.q}</h1>
         {answered && <h2>{joke.a}</h2>}
       </div>
