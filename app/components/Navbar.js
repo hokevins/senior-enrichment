@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class Navbar extends Component {
   render () {
     return (
       <nav>
-        <button>Campuses</button>
-        <button>Students</button>
-      </nav>
+          <NavLink to="/">
+            <button>Campuses</button>
+          </NavLink>
+          <NavLink to="/students">
+            <button>Students</button>
+          </NavLink>
+        </nav>
     );
   }
 }

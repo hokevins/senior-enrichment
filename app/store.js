@@ -1,6 +1,12 @@
-import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers';
-import loggingMiddleware from 'redux-logger'; // https://github.com/evgenyrodionov/redux-logger
-import thunkMiddleware from 'redux-thunk'; // https://github.com/gaearon/redux-thunk
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import loggingMiddleware from 'redux-logger';
+import thunk from 'redux-thunk';
+import campusesReducer from './reducers/campusesReducer';
 
-export default createStore(rootReducer, applyMiddleware(thunkMiddleware, loggingMiddleware));
+const mainReducer = combineReducers({
+  campuses: campusesReducer
+});
+
+const store = createStore(mainReducer, applyMiddleware(thunk, loggingMiddleware));
+
+export default store;
