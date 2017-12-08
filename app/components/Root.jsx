@@ -10,6 +10,7 @@ class Root extends Component {
     this.props.loadCampuses();
     this.props.loadAllStudents();
   }
+
   render () {
     return (
       <div className="root">

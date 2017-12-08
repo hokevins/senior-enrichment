@@ -21,7 +21,7 @@ render(
             <Route exact path="/students/:studentId" component={SingleStudent} />
             <Route path="/students" component={AllStudents} />
             <Route path="/campuses/:campusId" component={SingleCampus} />
-            {/* <Redirect to="/" /> */}
+            <Redirect to="/" />
           </Switch>
         <Root />
         <Footer />
