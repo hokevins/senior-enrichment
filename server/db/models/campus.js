@@ -11,7 +11,7 @@ module.exports = db.define('campus', {
   },
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: 'https://spaceplace.nasa.gov/review/planets/planets-04.en.png'
+    defaultValue: 'https://spaceplace.nasa.gov/review/planets/planets-06.en.png'
   },
   description: {
     type: Sequelize.TEXT

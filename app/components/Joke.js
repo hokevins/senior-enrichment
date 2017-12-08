@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Button from './Button';
 /* The code below does NOT relate to your project.
    This code is just a nice BIG example of how you can make a component.

@@ -1,15 +1,8 @@
 import axios from 'axios';
-
-// action type
-const GOT_CAMPUSES = 'GOT_CAMPUSES';
-
-// action creator
-const gotCampuses = (campuses) => {
-  return {
-    type: GOT_CAMPUSES,
-    campuses: campuses
-  };
-};
+import {
+  GOT_CAMPUSES,
+  gotCampuses
+} from './actionCreators';
 
 // thunk creator
 export const fetchCampuses = () => {
@@ -22,6 +15,7 @@ export const fetchCampuses = () => {
   };
 };
 
+// reducer
 const campusesReducer = (state = [], action) => {
   switch (action.type) {
     case GOT_CAMPUSES:

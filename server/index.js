@@ -7,24 +7,29 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-//logging middleware
+// logging middleware
 app.use(volleyball);
 
-//body parsing middleware
+// body parsing middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//static middleware
+// static middleware
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api', require('./api')); // include our routes!
 
-// 404 ERROR HANDLING MIDDLEWARE NOW IN /API/INDEX.JS
+// more specific 404 ERROR HANDLING MIDDLEWARE NOW IN /API/INDEX.JS
   // app.get('*', (req, res) => {
   //   res.sendFile(path.join(__dirname, '../public/index.html'));
   // }); // Send index.html for any other requests
 
-//error handling middleware
+// send index.html for any other requests
+app.use('*', (req, res, next) =>
+  res.sendFile(path.join(__dirname, '..', 'public/index.html'))
+);
+
+// error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || 'Internal server error');

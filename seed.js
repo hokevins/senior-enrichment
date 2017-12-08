@@ -4,19 +4,29 @@ const Campus = require('./server/db/models/campus');
 
 const campuses = [
   {
-    name: 'Earth',
-    imageUrl: 'https://spaceplace.nasa.gov/review/planets/planets-03.en.png',
-    description: 'Earth is home.'
-  },
-  {
     name: 'Venus',
     imageUrl: 'https://spaceplace.nasa.gov/review/planets/planets-02.en.png',
-    description: 'Venus is romantic.'
+    description: 'Campus-Venus is super romantic!'
   },
   {
     name: 'Mercury',
     imageUrl: 'https://spaceplace.nasa.gov/review/planets/planets-01.en.png',
-    description: 'Mercury is small.'
+    description: 'Campus-Mercury is the closest to the Sun, our instructor.'
+  },
+  {
+    name: 'Earth',
+    imageUrl: 'https://spaceplace.nasa.gov/review/planets/planets-03.en.png',
+    description: 'Campus-Earth is home to a good cup-of-tea!'
+  },
+  {
+    name: 'Mars',
+    imageUrl: 'https://spaceplace.nasa.gov/review/planets/planets-04.en.png',
+    description: 'Campus-Mars specializes in Sequelize and the back-end.'
+  },
+  {
+    name: 'Neptune',
+    imageUrl: 'https://spaceplace.nasa.gov/review/planets/planets-08.en.png',
+    description: 'Campus-Neptune specializes in React and the front-end.'
   }
 ];
 
@@ -49,6 +59,48 @@ const students = [
     lastName: 'Smalls',
     email: 'NS@rupauldragrace.com',
     gpa: 3.9,
+    campusId: id()
+  },
+  {
+    firstName: 'Trixie',
+    lastName: 'Mattel',
+    email: 'TM@rupauldragrace.com',
+    gpa: 0.3,
+    campusId: id()
+  },
+  {
+    firstName: 'Alaska',
+    lastName: 'Thunderf*ck 5000',
+    email: 'AT@rupauldragrace.com',
+    gpa: 2.3,
+    campusId: id()
+  },
+  {
+    firstName: 'Alyssa',
+    lastName: 'Edwards',
+    email: 'AE@rupauldragrace.com',
+    gpa: 3.65,
+    campusId: id()
+  },
+  {
+    firstName: 'Bianca',
+    lastName: 'Del Rio',
+    email: 'BD@rupauldragrace.com',
+    gpa: 4.0,
+    campusId: id()
+  },
+  {
+    firstName: 'Laganja',
+    lastName: 'Estranja',
+    email: 'LE@rupauldragrace.com',
+    gpa: 1.1,
+    campusId: id()
+  },
+  {
+    firstName: 'Nina',
+    lastName: 'Bonina Brown',
+    email: 'NBB@rupauldragrace.com',
+    gpa: 3.3,
     campusId: id()
   }
 ];
