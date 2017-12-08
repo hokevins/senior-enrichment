@@ -6,6 +6,7 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 
 import store from './store';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Root from './components/Root';
 import AllStudents from './components/AllStudents';
 import SingleCampus from './components/SingleCampus';
@@ -20,9 +21,10 @@ render(
             <Route exact path="/students/:studentId" component={SingleStudent} />
             <Route path="/students" component={AllStudents} />
             <Route path="/campuses/:campusId" component={SingleCampus} />
-            <Redirect to="/" />
+            {/* <Redirect to="/" /> */}
           </Switch>
         <Root />
+        <Footer />
       </div>
     </Router>
   </Provider>,
