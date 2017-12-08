@@ -1,6 +1,7 @@
 // action types
 export const GOT_CAMPUSES = 'GOT_CAMPUSES';
 export const GOT_ALL_STUDENTS = 'GOT_ALL_STUDENTS';
+export const GOT_STUDENT = 'GOT_STUDENT';
 
 // action creators
 export const gotCampuses = (campuses) => {
@@ -13,5 +14,11 @@ export const gotAllStudents = (allStudents) => {
   return {
     type: GOT_ALL_STUDENTS,
     allStudents: allStudents
+  };
+};
+export const gotStudent = (student) => {
+  return {
+    type: GOT_STUDENT,
+    student: student
   };
 };

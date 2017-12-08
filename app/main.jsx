@@ -2,7 +2,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { Provider } from 'react-redux';
-import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import store from './store';
 import Navbar from './components/Navbar';
@@ -11,6 +11,7 @@ import Root from './components/Root';
 import AllStudents from './components/AllStudents';
 import SingleCampus from './components/SingleCampus';
 import SingleStudent from './components/SingleStudent';
+import AddStudent from './components/AddStudent';
 
 render(
   <Provider store={store}>
@@ -18,10 +19,10 @@ render(
       <div>
         <Navbar />
           <Switch>
+            <Route exact path="/students/add" component={AddStudent} />
             <Route exact path="/students/:studentId" component={SingleStudent} />
             <Route path="/students" component={AllStudents} />
             <Route path="/campuses/:campusId" component={SingleCampus} />
-            <Redirect to="/" />
           </Switch>
         <Root />
         <Footer />

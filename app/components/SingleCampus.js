@@ -33,7 +33,7 @@ class SingleCampus extends Component {
         </div>
       );
     }
-  return null;
+  return null; // can also return a simple <div>loading...</div> to let user know that it's loading if it's taking a while
   }
 }
 

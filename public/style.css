@@ -33,6 +33,7 @@
   flex-wrap: wrap;
   border: 2px solid black;
   justify-content: space-between;
+  border-radius: 20px;
 }
 
 .campus-list li {
@@ -92,4 +93,19 @@
 .footer h5 {
   margin-top: 13px;
   margin-right: 5px;
+}
+
+.form-group {
+  margin-left: 20px;
+}
+
+.form-labels {
+  margin: 5px;
+}
+
+.form-control {
+  margin: 10px;
+  padding-bottom: 8px;
+  border-style: none;
+  border-bottom: 1px solid salmon;
 }

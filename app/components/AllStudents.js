@@ -7,7 +7,9 @@ class AllStudents extends Component {
     return (
       <div>
         <div className="label">STUDENT DIRECTORY
-          <button className="body-button">Add/Edit</button>
+          <NavLink to={'/students/add'}>
+            <button className="body-button">Add Student</button>
+          </NavLink>
         </div>
         <ul className="student-list">
         {
@@ -23,7 +25,12 @@ class AllStudents extends Component {
                 <NavLink to={`campuses/${student.campusId}`}>
                   <div> >>> Campus: {this.props.campuses.find(campus => campus.id === student.campusId).name}</div>
                 </NavLink>
-                <button className="body-button"> delete {student.firstName} </button>
+                <NavLink to={'/students/edit'}>
+                  <button className="body-button"> edit {student.firstName} </button>
+                </NavLink>
+                <NavLink to={'/students'}>
+                  <button className="body-button"> delete {student.firstName} </button>
+                </NavLink>
               </li>
             );
           })
