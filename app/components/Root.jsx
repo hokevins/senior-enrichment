@@ -31,6 +31,7 @@ class Root extends Component {
                   <NavLink to={`/campuses/${campus.id}`}>
                     <div>
                     {campus.name}
+                    {/* future implementation: serve users an 'are you sure' confirmation alert before deletion */}
                     <button
                       // future implementation: custom react alert message served to user if tries to click a disabled button
                       // disables delete campus button if campus's students exist
@@ -38,7 +39,6 @@ class Root extends Component {
                       className="body-button"
                       onClick={() => this.props.handleDelete(campus.id)}>    delete
                     </button>
-                    {/* future implementation: serve users an 'are you sure' confirmation alert before deletion */}
                     </div>
                     <div>{campus.description}</div>
                     <img src={campus.imageUrl} />

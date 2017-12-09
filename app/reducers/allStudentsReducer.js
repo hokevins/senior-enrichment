@@ -37,6 +37,18 @@ export const deleteStudent = (id) => {
     .catch(console.error);
   };
 };
+export const editStudent = (newState, id, history) => {
+  return function thunk (dispatch) {
+    axios.put(`/api/students/${id}`, newState)
+    .then(res => res.data)
+    .then(newStudent => {
+      dispatch(gotStudent(newStudent));
+      dispatch(fetchAllStudents());
+      history.push(`/students/${id}`);
+    })
+    .catch(console.error);
+  };
+};
 
 const allStudentsReducer = (state = [], action) => {
   switch (action.type) {

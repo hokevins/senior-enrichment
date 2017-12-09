@@ -13,6 +13,7 @@ import SingleCampus from './components/SingleCampus';
 import SingleStudent from './components/SingleStudent';
 import AddStudent from './components/AddStudent';
 import AddCampus from './components/AddCampus';
+import SingleStudentEdit from './components/SingleStudentEdit';
 
 render(
   <Provider store={store}>
@@ -21,6 +22,7 @@ render(
         <Navbar />
           <Switch>
             <Route exact path="/students/add" component={AddStudent} />
+            <Route exact path="/students/:studentId/edit" component={SingleStudentEdit} />
             <Route exact path="/students/:studentId" component={SingleStudent} />
             <Route path="/students" component={AllStudents} />
             <Route exact path="/campuses/add" component={AddCampus} />

@@ -16,7 +16,7 @@ class SingleStudent extends Component {
           <ul className="student-list">
             <li>
               <NavLink to={`/campuses/${thisStudent.campusId}`}>
-                <div>Student ID #:  {thisStudent.id}</div>
+                <div>StudentID:  {thisStudent.id}</div>
                 <div>Name:  {thisStudent.name}</div>
                 <div>Email:  {thisStudent.email}</div>
                 <div>GPA:  {thisStudent.gpa}</div>

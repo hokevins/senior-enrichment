@@ -19,7 +19,7 @@ class AllStudents extends Component {
             return (
               <li key={student.id}>
                 <NavLink to={`/students/${student.id}`}>
-                  <div>Student ID #:  {student.id}</div>
+                  <div>StudentID:  {student.id}</div>
                   <div>Name:  {student.name}</div>
                   <div>Email:  {student.email}</div>
                   <div>GPA:  {student.gpa}</div>
@@ -27,16 +27,14 @@ class AllStudents extends Component {
                 <NavLink to={`campuses/${student.campusId}`}>
                   <div> >>> Campus: {this.props.campuses.find(campus => campus.id === student.campusId).name}</div>
                 </NavLink>
-                <NavLink to={'/students/edit'}>
+                <NavLink to={`/students/${student.id}/edit`}>
                   <button className="body-button"> edit {student.firstName} </button>
                 </NavLink>
-                <NavLink to={'/students'}>
-                  <button
-                    className="body-button"
-                    onClick={() => this.props.handleDelete(student.id)}> delete {student.firstName}
-                  </button>
                 {/* future implementation: serve users an 'are you sure' confirmation alert before deletion */}
-                </NavLink>
+                <button
+                  className="body-button"
+                  onClick={() => this.props.handleDelete(student.id)}> delete {student.firstName}
+                </button>
               </li>
             );
           })
