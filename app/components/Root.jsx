@@ -30,8 +30,10 @@ class Root extends Component {
                     <div>
                     {campus.name}
                     <button
+                      // disables delete campus button if campus's students exist
+                      disabled={!!this.props.allStudents.filter(student => student.campusId == campus.id).length}
                       className="body-button"
-                      onClick = {() => this.props.handleDelete(campus.id)}>    delete
+                      onClick={() => this.props.handleDelete(campus.id)}>    delete
                     </button>
                     </div>
                     <div>{campus.description}</div>
@@ -63,7 +65,6 @@ function mapDispatchToProps (dispatch) {
     loadAllStudents: function () {
       dispatch(fetchAllStudents());
     },
-    // Future developement: auto re-assign students of campus to new campus, so not null.  Fix no students bug after deleting campus.
     handleDelete: function(id) {
       dispatch(deleteCampus(id));
     }

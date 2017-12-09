@@ -33,7 +33,7 @@ class AllStudents extends Component {
                 <NavLink to={'/students'}>
                   <button
                     className="body-button"
-                    onClick = {() => this.props.handleDelete(student.id)}> delete {student.firstName}
+                    onClick={() => this.props.handleDelete(student.id)}> delete {student.firstName}
                   </button>
                 </NavLink>
               </li>
