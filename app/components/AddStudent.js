@@ -31,6 +31,7 @@ class AddStudent extends Component {
           onSubmit = {(event) => this.props.handleSubmit(this.state, event)}>
           <div className="field-labels">first name</div>
             <input
+              required="true"
               className="form-control"
               type="text"
               name="firstName"
@@ -40,6 +41,7 @@ class AddStudent extends Component {
             />
           <div className="field-labels">last name</div>
             <input
+              required="true"
               className="form-control"
               type="text"
               name="lastName"
@@ -49,6 +51,7 @@ class AddStudent extends Component {
             />
           <div className="field-labels">email</div>
             <input
+              required="true"
               className="form-control"
               type="text"
               name="email"
@@ -82,6 +85,7 @@ class AddStudent extends Component {
           <br />
           <br />
           <button type="submit" className="body-button">Submit</button>
+          {/* future implementation: react component that serves a submission confirmation to users */}
         </form>
       </div>
     );

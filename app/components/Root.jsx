@@ -19,7 +19,9 @@ class Root extends Component {
         <img src="https://orig00.deviantart.net/0d25/f/2012/092/c/2/floating_city_by_zizk-d4ur9pn.jpg" />
         <div>
           <div className="label">OUR CAMPUSES
-            <button className="body-button">Add/Edit</button>
+            <NavLink to={'/campuses/add'}>
+              <button className="body-button">Add Campus</button>
+            </NavLink>
           </div>
           <ul className="campus-list">
           {
@@ -30,11 +32,13 @@ class Root extends Component {
                     <div>
                     {campus.name}
                     <button
+                      // future implementation: custom react alert message served to user if tries to click a disabled button
                       // disables delete campus button if campus's students exist
                       disabled={!!this.props.allStudents.filter(student => student.campusId === campus.id).length}
                       className="body-button"
                       onClick={() => this.props.handleDelete(campus.id)}>    delete
                     </button>
+                    {/* future implementation: serve users an 'are you sure' confirmation alert before deletion */}
                     </div>
                     <div>{campus.description}</div>
                     <img src={campus.imageUrl} />

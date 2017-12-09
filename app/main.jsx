@@ -12,6 +12,7 @@ import AllStudents from './components/AllStudents';
 import SingleCampus from './components/SingleCampus';
 import SingleStudent from './components/SingleStudent';
 import AddStudent from './components/AddStudent';
+import AddCampus from './components/AddCampus';
 
 render(
   <Provider store={store}>
@@ -22,7 +23,8 @@ render(
             <Route exact path="/students/add" component={AddStudent} />
             <Route exact path="/students/:studentId" component={SingleStudent} />
             <Route path="/students" component={AllStudents} />
-            <Route path="/campuses/:campusId" component={SingleCampus} />
+            <Route exact path="/campuses/add" component={AddCampus} />
+            <Route exact path="/campuses/:campusId" component={SingleCampus} />
           </Switch>
         <Root />
         <Footer />

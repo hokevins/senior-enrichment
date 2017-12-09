@@ -35,6 +35,7 @@ class AllStudents extends Component {
                     className="body-button"
                     onClick={() => this.props.handleDelete(student.id)}> delete {student.firstName}
                   </button>
+                {/* future implementation: serve users an 'are you sure' confirmation alert before deletion */}
                 </NavLink>
               </li>
             );
