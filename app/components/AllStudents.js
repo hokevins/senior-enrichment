@@ -31,7 +31,10 @@ class AllStudents extends Component {
                   <button className="body-button"> edit {student.firstName} </button>
                 </NavLink>
                 <NavLink to={'/students'}>
-                  <button className="body-button" onClick = {(event) => this.props.handleDelete(this.props.allStudents, student.id)}> delete {student.firstName} </button>
+                  <button
+                    className="body-button"
+                    onClick = {() => this.props.handleDelete(student.id)}> delete {student.firstName}
+                  </button>
                 </NavLink>
               </li>
             );
@@ -50,11 +53,10 @@ function mapStateToProps (storeState) {
   };
 }
 
-function mapDispatchToProps (dispatch, ownProps) {
+function mapDispatchToProps (dispatch) {
   return {
-    handleDelete: function(newState, id) {
-      // event.preventDefault();
-      dispatch(deleteStudent(newState, id, ownProps.history));
+    handleDelete: function(id) {
+      dispatch(deleteStudent(id));
     }
   };
 }

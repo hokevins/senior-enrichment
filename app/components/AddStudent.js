@@ -26,7 +26,9 @@ class AddStudent extends Component {
     return (
       <div>
         <div className="label">Add Student</div>
-        <form className="form-group" onSubmit = {(event) => this.props.handleSubmit(this.state, event)}>
+        <form
+          className="form-group"
+          onSubmit = {(event) => this.props.handleSubmit(this.state, event)}>
           <div className="field-labels">first name</div>
             <input
               className="form-control"

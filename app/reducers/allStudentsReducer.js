@@ -28,13 +28,11 @@ export const writeStudent = (newState, history) => {
     .catch(console.error);
   };
 };
-export const deleteStudent = (newState, id, history) => {
+export const deleteStudent = (id) => {
   return function thunk (dispatch) {
     axios.delete(`/api/students/${id}`)
     .then(() => {
       dispatch(fetchAllStudents());
-      // dispatch(gotAllStudents(newState));
-      // history.push('/students');
     })
     .catch(console.error);
   };
@@ -46,8 +44,6 @@ const allStudentsReducer = (state = [], action) => {
       return action.allStudents;
     case GOT_STUDENT:
       return [...state, action.student];
-    // case DELETE_STUDENT:
-    //   return [...state, action.student];
     default:
       return state;
   }

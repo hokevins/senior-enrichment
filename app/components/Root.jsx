@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { fetchCampuses } from '../reducers/campusesReducer';
+import { fetchCampuses, deleteCampus } from '../reducers/campusesReducer';
 import { fetchAllStudents } from '../reducers/allStudentsReducer';
 
 class Root extends Component {
@@ -29,7 +29,10 @@ class Root extends Component {
                   <NavLink to={`/campuses/${campus.id}`}>
                     <div>
                     {campus.name}
-                    <button className="body-button">    delete</button>
+                    <button
+                      className="body-button"
+                      onClick = {() => this.props.handleDelete(campus.id)}>    delete
+                    </button>
                     </div>
                     <div>{campus.description}</div>
                     <img src={campus.imageUrl} />
@@ -59,6 +62,10 @@ function mapDispatchToProps (dispatch) {
     },
     loadAllStudents: function () {
       dispatch(fetchAllStudents());
+    },
+    // Future developement: auto re-assign students of campus to new campus, so not null.  Fix no students bug after deleting campus.
+    handleDelete: function(id) {
+      dispatch(deleteCampus(id));
     }
   };
 }

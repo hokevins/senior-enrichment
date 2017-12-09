@@ -14,6 +14,16 @@ export const fetchCampuses = () => {
     .catch(console.error);
   };
 };
+// writeCampus will go here!!
+export const deleteCampus = (id) => {
+  return function thunk (dispatch) {
+    axios.delete(`/api/campuses/${id}`)
+    .then(() => {
+      dispatch(fetchCampuses());
+    })
+    .catch(console.error);
+  };
+};
 
 // reducer
 const campusesReducer = (state = [], action) => {
