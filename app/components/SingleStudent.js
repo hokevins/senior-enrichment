@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 class SingleStudent extends Component {
   render () {
     // must convert studentId param into number to compare
-    const studentId = +(this.props.match.params.studentId);
-    const thisStudent = this.props.allStudents[studentId - 1];
-    const thisCampus = this.props.campuses[thisStudent.campusId - 1];
+    const studentId = Number(this.props.match.params.studentId);
+    const thisStudent = this.props.allStudents.find(student => student.id === studentId);
+    const thisCampus = this.props.campuses.find(campus => campus.id === thisStudent.campusId);
 
     if (thisStudent && thisCampus) { // fixed async issue initial/later mount
       return (

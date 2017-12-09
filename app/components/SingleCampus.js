@@ -5,14 +5,16 @@ import { connect } from 'react-redux';
 class SingleCampus extends Component {
   render () {
     // must convert campusId param into number to compare
-    const campusId = +(this.props.match.params.campusId);
+    const campusId = Number(this.props.match.params.campusId);
     const studentsOfCampus = this.props.allStudents.filter(student => student.campusId === campusId);
-    const thisCampus = this.props.campuses[campusId - 1];
+    const thisCampus = this.props.campuses.find(campus => campus.id === campusId);
 
     if (thisCampus) { // fixed async issue initial/later mount
       return (
         <div>
-          <div className="label">{thisCampus.name}'s STUDENT DIRECTORY</div>
+          <div className="label">{thisCampus.name}'s STUDENT DIRECTORY
+            <img className="single-campus-img" src={thisCampus.imageUrl} />
+          </div>
           <ul className="student-list">
           {
             studentsOfCampus.map((student) => {

@@ -1,14 +1,22 @@
+a {
+  text-decoration: none;
+}
+
 .root h2 {
   margin: 25px;
+  font-size: 24px;
+  font-family: palatino;
 }
 
 .root h4 {
   margin: 25px;
   color: darkgray;
+  font-size: 16px;
+  font-family: palatino;
 }
 
 .root img {
-  width: 800px;
+  width: 810px;
   height: 400px;
   margin-left: 25px;
 }
@@ -21,9 +29,9 @@
 
 .nav-button {
   margin: 10px;
-  background-color: orange;
+  background-color: #EFD469;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .campus-list {
@@ -34,6 +42,12 @@
   border: 2px solid black;
   justify-content: space-between;
   border-radius: 20px;
+}
+
+.campus-list div {
+  color: #1496BB;
+  font-family: verdana;
+  font-size: 14px;
 }
 
 .campus-list li {
@@ -48,8 +62,22 @@
   height: 175px;
 }
 
+.single-campus-img {
+  width: 100px;
+  height: 58px;
+  margin-left: 20px;
+  position: relative;
+  top: 15px;
+}
+
 .student-list {
   list-style: none;
+}
+
+.student-list div {
+  color: #1496bb;
+  font-family: verdana;
+  font-size: 14px;
 }
 
 .student-list li {
@@ -59,16 +87,17 @@
 
 .label {
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
   margin: 20px;
-  font-style: bold;
+  font-style: bolder;
+  font-family: palatino;
 }
 
 .body-button {
-  font-size: 14px;
+  font-size: 16px;
   margin-left: 10px;
   background-color: ghostwhite;
-  color: orange;
+  color: #BCA136;
   font-style: bold;
 }
 
@@ -77,6 +106,8 @@
   justify-content: center;
   margin: 30px;
   padding: none;
+  font-family: verdana;
+  font-size: 12px;
 }
 
 .footer img {
@@ -108,4 +139,12 @@
   padding-bottom: 8px;
   border-style: none;
   border-bottom: 1px solid salmon;
+  font-size: 14px;
+  color: #707C80;
+}
+
+.field-labels {
+  color: #1496BB;
+  font-family: verdana;
+  font-size: 15px;
 }

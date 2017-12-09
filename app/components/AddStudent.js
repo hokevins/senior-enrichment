@@ -25,7 +25,7 @@ class AddStudent extends Component {
   render () {
     return (
       <div>
-        <div className="label">Add Student</div>
+        <div className="label">Student Enrollment Form</div>
         <form
           className="form-group"
           onSubmit = {(event) => this.props.handleSubmit(this.state, event)}>

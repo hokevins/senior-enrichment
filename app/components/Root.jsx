@@ -31,7 +31,7 @@ class Root extends Component {
                     {campus.name}
                     <button
                       // disables delete campus button if campus's students exist
-                      disabled={!!this.props.allStudents.filter(student => student.campusId == campus.id).length}
+                      disabled={!!this.props.allStudents.filter(student => student.campusId === campus.id).length}
                       className="body-button"
                       onClick={() => this.props.handleDelete(campus.id)}>    delete
                     </button>
