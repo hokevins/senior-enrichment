@@ -20,6 +20,8 @@ class AddCampus extends Component {
     this.setState(newState);
   }
 
+  // future implementation:  make validations for inputs and serve up custom warning messages to user for non-valid input
+
   render () {
     return (
       <div>
