@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import {
   GOT_CAMPUSES,
   gotCampuses,
@@ -32,6 +33,18 @@ export const deleteCampus = (id) => {
     axios.delete(`/api/campuses/${id}`)
     .then(() => {
       dispatch(fetchCampuses());
+    })
+    .catch(console.error);
+  };
+};
+export const editCampus = (newState, id, history) => {
+  return function thunk (dispatch) {
+    axios.put(`/api/campuses/${id}`, newState)
+    .then(res => res.data)
+    .then(newCampus => {
+      dispatch(gotCampus(newCampus));
+      dispatch(fetchCampuses());
+      history.push(`/campuses/${id}`);
     })
     .catch(console.error);
   };

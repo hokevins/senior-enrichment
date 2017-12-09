@@ -31,14 +31,16 @@ class Root extends Component {
                   <NavLink to={`/campuses/${campus.id}`}>
                     <div>
                     {campus.name}
-                    {/* future implementation: serve users an 'are you sure' confirmation alert before deletion */}
+                    <NavLink to={`/campuses/${campus.id}/edit`}>
+                      <button className="body-button">edit</button>
+                    </NavLink>
+                      {/* future implementation: serve users an 'are you sure' confirmation alert before deletion */}
                     <button
                       // future implementation: custom react alert message served to user if tries to click a disabled button
                       // disables delete campus button if campus's students exist
                       disabled={!!this.props.allStudents.filter(student => student.campusId === campus.id).length}
                       className="body-button"
-                      onClick={() => this.props.handleDelete(campus.id)}>    delete
-                    </button>
+                      onClick={() => this.props.handleDelete(campus.id)}>delete</button>
                     </div>
                     <div>{campus.description}</div>
                     <img src={campus.imageUrl} />

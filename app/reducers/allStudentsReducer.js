@@ -50,6 +50,7 @@ export const editStudent = (newState, id, history) => {
   };
 };
 
+// reducer
 const allStudentsReducer = (state = [], action) => {
   switch (action.type) {
     case GOT_ALL_STUDENTS:
