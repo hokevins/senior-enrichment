@@ -19,6 +19,7 @@ a {
   width: 810px;
   height: 400px;
   margin-left: 25px;
+  border-radius: 20px;
 }
 
 .nav {
