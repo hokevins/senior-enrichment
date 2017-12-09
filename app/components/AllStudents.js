@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { deleteStudent } from '../reducers/allStudentsReducer';
+
 class AllStudents extends Component {
   render () {
     return (
@@ -29,7 +31,7 @@ class AllStudents extends Component {
                   <button className="body-button"> edit {student.firstName} </button>
                 </NavLink>
                 <NavLink to={'/students'}>
-                  <button className="body-button"> delete {student.firstName} </button>
+                  <button className="body-button" onClick = {(event) => this.props.handleDelete(this.props.allStudents, student.id)}> delete {student.firstName} </button>
                 </NavLink>
               </li>
             );
@@ -48,6 +50,15 @@ function mapStateToProps (storeState) {
   };
 }
 
-const AllStudentsContainer = connect(mapStateToProps)(AllStudents);
+function mapDispatchToProps (dispatch, ownProps) {
+  return {
+    handleDelete: function(newState, id) {
+      // event.preventDefault();
+      dispatch(deleteStudent(newState, id, ownProps.history));
+    }
+  };
+}
+
+const AllStudentsContainer = connect(mapStateToProps, mapDispatchToProps)(AllStudents);
 
 export default AllStudentsContainer;
