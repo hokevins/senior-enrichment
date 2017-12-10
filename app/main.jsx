@@ -22,6 +22,7 @@ render(
       <div>
         <Navbar />
           <Switch>
+            {/* future implementation: add anchor tags to fix having to scroll-up to find the newly rendered content */}
             <Route path="/students/add" component={AddStudent} />
             <Route exact path="/students/:studentId/edit" component={SingleStudentEdit} />
             <Route exact path="/students/:studentId" component={SingleStudent} />
