@@ -68,6 +68,7 @@ class SingleCampusEdit extends Component {
               onChange={this.handleChange}
               value={this.state.description}
             />
+          {/* future implementation: add a student directory to be able to edit the campus roster */}
           <br />
           <br />
           <button type="submit" className="body-button">Submit</button>
