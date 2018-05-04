@@ -4,10 +4,10 @@
   "description": "A review time project",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack -w & nodemon main",
+    "start:dev": "webpack -w & node main",
     "start": "node main",
     "seed": "node seed.js",
-    "deploy": "deploy",
+    "deploy": "script/deploy",
     "postinstall": "npm run seed"
   },
   "author": "Kevin Ho",
