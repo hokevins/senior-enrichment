@@ -1,6 +1,11 @@
-# Senior Enrichment Project
+# Welcome to _The Margaret Hamilton Interplanetary Academy of JavaScript_!
 
-Make a thing!
+Done at end of Junior Phase:  senior enrichment project @ Fullstack Academy-1710
+
+[Deployed on Heroku](https://margaret-hamilton-academy.herokuapp.com)
+[YouTube Demo & Code Review](https://www.youtube.com/watch?v=COhYTk8DijQ)
+
+#Make a thing!
 
 ## Getting started
 
