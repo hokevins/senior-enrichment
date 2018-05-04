@@ -6,7 +6,7 @@ Completed at end of Junior Phase:  senior enrichment project @ Fullstack Academy
 
 [YouTube Demo & Code Review](https://www.youtube.com/watch?v=COhYTk8DijQ)
 
-##Make a thing!  Project specs & client brief:
+# Make a thing!  Project specs & client brief:
 
 ## Getting started
 
