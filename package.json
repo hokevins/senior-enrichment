@@ -6,7 +6,9 @@
   "scripts": {
     "start:dev": "webpack -w & nodemon main",
     "start": "node main",
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+    "deploy": "deploy",
+    "postinstall": "npm run seed"
   },
   "author": "Kevin Ho",
   "keywords": [
